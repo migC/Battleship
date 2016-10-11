@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -78,29 +77,26 @@ public static class GameResources
 	/// </summary>
 	/// <param name="image">Name of image</param>
 	/// <returns>The image loaded with this name</returns>
-
 	public static Bitmap GameImage(string image)
 	{
 		return _Images[image];
 	}
-
+	
 	/// <summary>
 	/// Gets an sound loaded in the Resources
 	/// </summary>
 	/// <param name="sound">Name of sound</param>
 	/// <returns>The sound with this name</returns>
-
 	public static SoundEffect GameSound(string sound)
 	{
 		return _Sounds[sound];
 	}
-
+	
 	/// <summary>
 	/// Gets the music loaded in the Resources
 	/// </summary>
 	/// <param name="music">Name of music</param>
 	/// <returns>The music with this name</returns>
-
 	public static Music GameMusic(string music)
 	{
 		return _Music[music];
@@ -118,11 +114,11 @@ public static class GameResources
 	private static Font _LoadingFont;
 
 	private static SoundEffect _StartSound;
+	
 	/// <summary>
 	/// The Resources Class stores all of the Games Media Resources, such as Images, Fonts
 	/// Sounds, Music.
 	/// </summary>
-
 	public static void LoadResources()
 	{
 		int width = 0;
@@ -194,9 +190,7 @@ public static class GameResources
 			SwinGame.RefreshScreen();
 			SwinGame.ProcessEvents();
 		}
-
 		SwinGame.Delay(1500);
-
 	}
 
 	private static void ShowMessage(string message, int number)
@@ -289,7 +283,6 @@ public static class GameResources
 
 	private static void FreeMusic()
 	{
-
 		foreach (Music obj in _Music.Values) {
 			Audio.FreeMusic(obj);
 		}

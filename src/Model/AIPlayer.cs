@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -6,13 +5,13 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
 /// <summary>
 /// The AIPlayer is a type of player. It can readomly deploy ships, it also has the
 /// functionality to generate coordinates and shoot at tiles
 /// </summary>
 public abstract class AIPlayer : Player
 {
-
 	/// <summary>
 	/// Location can store the location of the last hit made by an
 	/// AI Player. The use of which determines the difficulty.
@@ -22,6 +21,7 @@ public abstract class AIPlayer : Player
 		private int _Row;
 
 		private int _Column;
+		
 		/// <summary>
 		/// The row of the shot
 		/// </summary>
@@ -77,7 +77,6 @@ public abstract class AIPlayer : Player
 			//return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
 		}
 	}
-
 
 	public AIPlayer(BattleShipsGame game) : base(game)
 	{
@@ -140,7 +139,6 @@ public abstract class AIPlayer : Player
 		}
 	}
 }
-
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
 //Conversion powered by NRefactory.

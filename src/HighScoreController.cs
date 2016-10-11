@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -19,6 +18,7 @@ static class HighScoreController
 	private const int NAME_WIDTH = 3;
 
 	private const int SCORES_LEFT = 490;
+	
 	/// <summary>
 	/// The score structure is used to keep the name and
 	/// score of the top players together.
@@ -28,6 +28,7 @@ static class HighScoreController
 		public string Name;
 
 		public int Value;
+		
 		/// <summary>
 		/// Allows scores to be compared to facilitate sorting
 		/// </summary>
@@ -47,6 +48,7 @@ static class HighScoreController
 
 
 	private static List<Score> _Scores = new List<Score>();
+	
 	/// <summary>
 	/// Loads the scores from the highscores text file.
 	/// </summary>

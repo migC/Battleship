@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -23,6 +22,7 @@ public static class GameController
 	private static Stack<GameState> _state = new Stack<GameState>();
 
 	private static AIOption _aiSetting;
+	
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used
@@ -99,7 +99,6 @@ public static class GameController
 	/// <summary>
 	/// Stops listening to the old game once a new game is started
 	/// </summary>
-
 	private static void EndGame()
 	{
 		//RemoveHandler _human.PlayerGrid.Changed, AddressOf GridChanged
@@ -296,7 +295,6 @@ public static class GameController
 				HighScoreController.HandleHighScoreInput();
 				break;
 		}
-
 		UtilityFunctions.UpdateAnimations();
 	}
 
@@ -333,7 +331,6 @@ public static class GameController
 				HighScoreController.DrawHighScores();
 				break;
 		}
-
 		UtilityFunctions.DrawAnimations();
 
 		SwinGame.RefreshScreen();
@@ -376,5 +373,4 @@ public static class GameController
 	{
 		_aiSetting = setting;
 	}
-
 }

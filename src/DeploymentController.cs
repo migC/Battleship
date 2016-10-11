@@ -22,11 +22,9 @@ static class DeploymentController
 	private const int TOP_BUTTONS_HEIGHT = 46;
 	private const int PLAY_BUTTON_LEFT = 693;
 
-
     private const int BACK_BUTTON_LEFT = 20;
     private const int BACK_BUTTON_WIDTH = 102;
     private const int BACK_BUTTON_TOP = 20;
-
 
     private const int PLAY_BUTTON_WIDTH = 80;
 	private const int UP_DOWN_BUTTON_LEFT = 410;
@@ -42,6 +40,7 @@ static class DeploymentController
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
+	
 	/// <summary>
 	/// Handles user input for the Deployment phase of the game.
 	/// </summary>
@@ -168,10 +167,8 @@ static class DeploymentController
 					//Else
 					//    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 				}
-
 				//SwinGame.DrawRectangle(Color.Black, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 				//SwinGame.DrawText(sn.ToString(), Color.Black, GameFont("Courier"), SHIPS_LEFT + TEXT_OFFSET, SHIPS_TOP + i * SHIPS_HEIGHT)
-
 			}
 		}
 
@@ -200,7 +197,6 @@ static class DeploymentController
 				return sn;
 			}
 		}
-
 		return ShipName.None;
 	}
 }

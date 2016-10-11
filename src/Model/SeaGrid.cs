@@ -1,10 +1,10 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
+
 /// <summary>
 /// The SeaGrid is the grid upon which the ships are deployed.
 /// </summary>
@@ -23,6 +23,7 @@ public class SeaGrid : ISeaGrid
 	private Dictionary<ShipName, Ship> _Ships;
 
 	private int _ShipsKilled = 0;
+	
 	/// <summary>
 	/// The sea grid has changed and should be redrawn.
 	/// </summary>
@@ -74,7 +75,6 @@ public class SeaGrid : ISeaGrid
 					return false;
 				}
 			}
-
 			return true;
 		}
 	}
@@ -92,7 +92,6 @@ public class SeaGrid : ISeaGrid
 				_GameTiles[i, j] = new Tile(i, j, null);
 			}
 		}
-
 		_Ships = ships;
 	}
 
@@ -198,7 +197,6 @@ public class SeaGrid : ISeaGrid
 		}
 	}
 }
-
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
 //Conversion powered by NRefactory.

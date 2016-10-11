@@ -1,17 +1,16 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
+
 /// <summary>
 /// Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
 /// all ships are deployed and if all ships are detroyed. A Player can also attach.
 /// </summary>
 public class Player : IEnumerable<Ship>
 {
-
 	protected static Random _Random = new Random();
 	private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
 	private SeaGrid _playerGrid;
@@ -22,6 +21,7 @@ public class Player : IEnumerable<Ship>
 	private int _hits;
 
 	private int _misses;
+	
 	/// <summary>
 	/// Returns the game that the player is part of.
 	/// </summary>
@@ -51,7 +51,6 @@ public class Player : IEnumerable<Ship>
 				_Ships.Add(name, new Ship(name));
 			}
 		}
-
 		RandomizeDeployment();
 	}
 
@@ -194,7 +193,6 @@ public class Player : IEnumerable<Ship>
 				_misses += 1;
 				break;
 		}
-
 		return result;
 	}
 
@@ -235,7 +233,6 @@ public class Player : IEnumerable<Ship>
 		}
 	}
 }
-
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
 //Conversion powered by NRefactory.

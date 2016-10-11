@@ -1,9 +1,9 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 /// <summary>
 /// A Ship has all the details about itself. For example the shipname,
 /// size, number of hits taken and the location. Its able to add tiles,
@@ -22,6 +22,7 @@ public class Ship
 	private int _col;
 
 	private Direction _direction;
+	
 	/// <summary>
 	/// The type of ship
 	/// </summary>
@@ -132,7 +133,6 @@ public class Ship
 		_direction = direction;
 	}
 }
-
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
 //Conversion powered by NRefactory.
