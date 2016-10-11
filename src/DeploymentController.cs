@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -37,6 +36,7 @@ static class DeploymentController
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
+	
 	/// <summary>
 	/// Handles user input for the Deployment phase of the game.
 	/// </summary>
@@ -76,7 +76,6 @@ static class DeploymentController
 				_currentDirection = Direction.LeftRight;
 			} 
 
-
 				ShipName selected = default(ShipName);
 				selected = GetShipMouseIsOver ();
 				if (selected != ShipName.None) {
@@ -92,10 +91,6 @@ static class DeploymentController
 				if (UtilityFunctions.IsMouseInRectangle (RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 					GameController.HumanPlayer.RandomizeDeployment ();
 				}
-
-
-
-
 		}
 	}
 
@@ -170,10 +165,8 @@ static class DeploymentController
 					//Else
 					//    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 				}
-
 				//SwinGame.DrawRectangle(Color.Black, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 				//SwinGame.DrawText(sn.ToString(), Color.Black, GameFont("Courier"), SHIPS_LEFT + TEXT_OFFSET, SHIPS_TOP + i * SHIPS_HEIGHT)
-
 			}
 		}
 
@@ -182,7 +175,6 @@ static class DeploymentController
 			//SwinGame.FillRectangle(Color.LightBlue, PLAY_BUTTON_LEFT, PLAY_BUTTON_TOP, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT)
 			//SwinGame.DrawText("PLAY", Color.Black, GameFont("Courier"), PLAY_BUTTON_LEFT + TEXT_OFFSET, PLAY_BUTTON_TOP)
 		}
-
 		SwinGame.DrawBitmap(GameResources.GameImage("RandomButton"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
 
 		UtilityFunctions.DrawMessage();
@@ -202,7 +194,6 @@ static class DeploymentController
 				return sn;
 			}
 		}
-
 		return ShipName.None;
 	}
 }
