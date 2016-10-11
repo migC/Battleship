@@ -23,7 +23,13 @@ static class DeploymentController
 	private const int TOP_BUTTONS_HEIGHT = 46;
 	private const int PLAY_BUTTON_LEFT = 693;
 
-	private const int PLAY_BUTTON_WIDTH = 80;
+
+    private const int BACK_BUTTON_LEFT = 20;
+    private const int BACK_BUTTON_WIDTH = 102;
+    private const int BACK_BUTTON_TOP = 20;
+
+
+    private const int PLAY_BUTTON_WIDTH = 80;
 	private const int UP_DOWN_BUTTON_LEFT = 410;
 
 	private const int LEFT_RIGHT_BUTTON_LEFT = 350;
@@ -62,25 +68,41 @@ static class DeploymentController
 			GameController.HumanPlayer.RandomizeDeployment();
 		}
 
-		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
-			ShipName selected = default(ShipName);
-			selected = GetShipMouseIsOver();
-			if (selected != ShipName.None) {
-				_selectedShip = selected;
-			} else {
-				DoDeployClick();
-			}
+        if (SwinGame.MouseClicked(MouseButton.LeftButton))
+        {
+            ShipName selected = default(ShipName);
+            selected = GetShipMouseIsOver();
+            if (selected != ShipName.None)
+            {
+                _selectedShip = selected;
+            }
+            else
+            {
+                DoDeployClick();
+            }
 
-			if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				GameController.EndDeployment();
-			} else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				_currentDirection = Direction.LeftRight;
-			} else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				_currentDirection = Direction.LeftRight;
-			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				GameController.HumanPlayer.RandomizeDeployment();
-			}
-		}
+            if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+            {
+                GameController.EndDeployment();
+            }
+            else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+            {
+                _currentDirection = Direction.LeftRight;
+            }
+            else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+            {
+                _currentDirection = Direction.LeftRight;
+            }
+            else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+            {
+                GameController.HumanPlayer.RandomizeDeployment();
+            }
+            else if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(BACK_BUTTON_LEFT, BACK_BUTTON_TOP, BACK_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+            {
+
+                GameController.AddNewState(GameState.ViewingGameMenu);
+            }
+        }
 	}
 
 	/// <summary>
@@ -119,13 +141,13 @@ static class DeploymentController
 	/// <summary>
 	/// Draws the deployment screen showing the field and the ships
 	/// that the player can deploy.
-	/// </summary>
-	public static void DrawDeployment()
+	/// </summary>f
 	{
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
+        SwinGame.DrawBitmap(GameResources.GameImage("MC"), BACK_BUTTON_LEFT, TOP_BUTTONS_TOP);
 
-		//Draw the Left/Right and Up/Down buttons
-		if (_currentDirection == Direction.LeftRight) {
+        //Draw the Left/Right and Up/Down buttons
+        if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
 			//SwinGame.DrawText("U/D", Color.Gray, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
 			//SwinGame.DrawText("L/R", Color.White, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
