@@ -1,1 +1,22 @@
-Compilation failed: 1 error(s), 0 warnings
+Microsoft (R) Visual C# Compiler version 4.6.1586.0
+for C# 5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+This compiler is provided as part of the Microsoft (R) .NET Framework, but only supports language versions up to C# 5, which is no longer the latest version. For compilers that support newer versions of the C# programming language, see http://go.microsoft.com/fwlink/?LinkID=533240
+
+src\DeploymentController.cs(145,2): error CS1519: Invalid token '{' in class, struct, or interface member declaration
+src\DeploymentController.cs(146,29): error CS1519: Invalid token '(' in class, struct, or interface member declaration
+src\DeploymentController.cs(146,67): error CS1519: Invalid token ',' in class, struct, or interface member declaration
+src\DeploymentController.cs(146,95): error CS1519: Invalid token ',' in class, struct, or interface member declaration
+src\DeploymentController.cs(147,28): error CS1519: Invalid token '(' in class, struct, or interface member declaration
+src\DeploymentController.cs(147,52): error CS1519: Invalid token '(' in class, struct, or interface member declaration
+src\DeploymentController.cs(147,76): error CS1519: Invalid token ',' in class, struct, or interface member declaration
+src\DeploymentController.cs(147,93): error CS1519: Invalid token ')' in class, struct, or interface member declaration
+src\DeploymentController.cs(150,31): error CS1519: Invalid token '==' in class, struct, or interface member declaration
+src\DeploymentController.cs(150,53): error CS1519: Invalid token ')' in class, struct, or interface member declaration
+src\DeploymentController.cs(151,23): error CS1519: Invalid token '(' in class, struct, or interface member declaration
+src\DeploymentController.cs(151,47): error CS1519: Invalid token '(' in class, struct, or interface member declaration
+src\DeploymentController.cs(151,90): error CS1519: Invalid token ',' in class, struct, or interface member declaration
+src\DeploymentController.cs(151,107): error CS1519: Invalid token ')' in class, struct, or interface member declaration
+src\DeploymentController.cs(154,5): error CS0116: A namespace cannot directly contain members such as fields or methods
+src\DeploymentController.cs(187,2): error CS1022: Type or namespace definition, or end-of-file expected

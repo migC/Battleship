@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -141,7 +140,8 @@ static class DeploymentController
 	/// <summary>
 	/// Draws the deployment screen showing the field and the ships
 	/// that the player can deploy.
-	/// </summary>f
+	/// </summary>
+	public static void DrawDeployment()
 	{
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
         SwinGame.DrawBitmap(GameResources.GameImage("MC"), BACK_BUTTON_LEFT, TOP_BUTTONS_TOP);
