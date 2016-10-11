@@ -85,7 +85,6 @@ public class SeaGridAdapter : ISeaGrid
 		return _MyGrid.HitTile(row, col);
 	}
 	#endregion
-
 }
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
