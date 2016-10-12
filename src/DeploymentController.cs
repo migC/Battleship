@@ -153,7 +153,7 @@ static class DeploymentController
 	public static void DrawDeployment()
 	{
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
-
+SwinGame.DrawBitmap(GameResources.GameImage("MC"), BACK_BUTTON_LEFT, TOP_BUTTONS_TOP);
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
