@@ -21,6 +21,10 @@ static class DeploymentController
 
 	private const int TOP_BUTTONS_HEIGHT = 46;
 	private const int PLAY_BUTTON_LEFT = 693;
+	
+	private const int BACK_BUTTON_LEFT = 20;
+	private const int BACK_BUTTON_WIDTH = 102;
+	private const int BACK_BUTTON_TOP = 20;
 
 	private const int PLAY_BUTTON_WIDTH = 80;
 	private const int UP_DOWN_BUTTON_LEFT = 410;
@@ -91,8 +95,15 @@ static class DeploymentController
 				if (UtilityFunctions.IsMouseInRectangle (RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 					GameController.HumanPlayer.RandomizeDeployment ();
 				}
-		}
-	}
+				
+				if (GameController.HumanPlayer.ReadyToDeploy &
+				UtilityFunctions.IsMouseInRectangle(BACK_BUTTON_LEFT, BACK_BUTTON_TOP,
+				BACK_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+				{
+					GameController.AddNewState(GameState.ViewingGameMenu);
+				}
+		    }
+	    }
 
 	/// <summary>
 	/// The user has clicked somewhere on the screen, check if its is a deployment and deploy
