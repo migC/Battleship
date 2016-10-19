@@ -97,7 +97,6 @@ public class BattleShipsGame
 		if (newAttack.Value == ResultOfAttack.Miss) {
 			_playerIndex = otherPlayer;
 		}
-
 		return newAttack;
 	}
 }
