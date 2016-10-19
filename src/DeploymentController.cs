@@ -84,21 +84,22 @@ static class DeploymentController
             {
 				GameController.EndDeployment();
 			}
-            else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+            if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
             {
 				_currentDirection = Direction.UpDown;
 			}
-            else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
+            if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT))
             {
 				_currentDirection = Direction.LeftRight;
 			}
-            else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+            if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
             {
 				GameController.HumanPlayer.RandomizeDeployment();
 			}
-            else if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(BACK_BUTTON_LEFT, BACK_BUTTON_TOP, BACK_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
+            if (UtilityFunctions.IsMouseInRectangle(BACK_BUTTON_LEFT, 72, BACK_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
             {
 
+                //MeneController.DrawMainMenu();
                 GameController.AddNewState(GameState.ViewingGameMenu);
             }
         }
