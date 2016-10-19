@@ -94,7 +94,6 @@ public class Tile
 			//if there is no ship in the tile
 			if (_Ship == null) {
 				//and the tile has been hit
-
 				if (_Shot) {
 					return TileView.Miss;
 				} else {
@@ -125,6 +124,7 @@ public class Tile
 				_Ship.Hit();
 			}
 		} else {
+			//shot = false;
 			throw new ApplicationException("You have already shot this square");
 		}
 	}
