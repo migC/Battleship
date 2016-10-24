@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -9,11 +8,12 @@ using SwinGameSDK;
 
 public static class GameResources
 {
-
+//font sizes
 	private static void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
-		NewFont("Courier", "cour.ttf", 14);
+		//size of score text
+		NewFont("Courier", "cour.ttf", 15);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "ffaccess.ttf", 14);
 	}
@@ -52,7 +52,8 @@ public static class GameResources
 		NewSound("Error", "error.wav");
 		NewSound("Hit", "hit.wav");
 		NewSound("Sink", "sink.wav");
-		///NewSound("Siren", "siren.wav"); /// removed due to missing resourcs.
+		///NewSound("Siren", "siren.wav"); 
+		/// removed due to missing resourcs.
 		NewSound("Miss", "watershot.wav");
 		NewSound("Winner", "winner.wav");
 		NewSound("Lose", "lose.wav");
@@ -68,7 +69,6 @@ public static class GameResources
 	/// </summary>
 	/// <param name="font">Name of Font</param>
 	/// <returns>The Font Loaded with this Name</returns>
-
 	public static Font GameFont(string font)
 	{
 		return _Fonts[font];
@@ -79,7 +79,6 @@ public static class GameResources
 	/// </summary>
 	/// <param name="image">Name of image</param>
 	/// <returns>The image loaded with this name</returns>
-
 	public static Bitmap GameImage(string image)
 	{
 		return _Images[image];
@@ -90,7 +89,6 @@ public static class GameResources
 	/// </summary>
 	/// <param name="sound">Name of sound</param>
 	/// <returns>The sound with this name</returns>
-
 	public static SoundEffect GameSound(string sound)
 	{
 		return _Sounds[sound];
@@ -101,7 +99,6 @@ public static class GameResources
 	/// </summary>
 	/// <param name="music">Name of music</param>
 	/// <returns>The music with this name</returns>
-
 	public static Music GameMusic(string music)
 	{
 		return _Music[music];
@@ -119,11 +116,11 @@ public static class GameResources
 	private static Font _LoadingFont;
 
 	private static SoundEffect _StartSound;
+	
 	/// <summary>
 	/// The Resources Class stores all of the Games Media Resources, such as Images, Fonts
 	/// Sounds, Music.
 	/// </summary>
-
 	public static void LoadResources()
 	{
 		int width = 0;
@@ -195,9 +192,7 @@ public static class GameResources
 			SwinGame.RefreshScreen();
 			SwinGame.ProcessEvents();
 		}
-
 		SwinGame.Delay(1500);
-
 	}
 
 	private static void ShowMessage(string message, int number)

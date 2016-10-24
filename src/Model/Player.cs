@@ -44,7 +44,6 @@ public class Player : IEnumerable<Ship>
 	{
 		_game = controller;
 		_playerGrid = new SeaGrid(_Ships);
-
 		//for each ship add the ships name so the seagrid knows about them
 		foreach (ShipName name in Enum.GetValues(typeof(ShipName))) {
 			if (name != ShipName.None) {
@@ -94,7 +93,6 @@ public class Player : IEnumerable<Ship>
 			return null;
 
 		return _Ships[name];
-
 	}
 
 	/// <summary>
@@ -192,6 +190,10 @@ public class Player : IEnumerable<Ship>
 			case ResultOfAttack.Miss:
 				_misses += 1;
 				break;
+			/*case ResultOfAttack.ShotAlready:
+			_hits = 0;
+			_misses = 0;
+			_shots = 0;*/
 		}
 		return result;
 	}
@@ -202,7 +204,6 @@ public class Player : IEnumerable<Ship>
 		Direction heading = default(Direction);
 
 		//for each ship to deploy in shipist
-
 		foreach (ShipName shipToPlace in Enum.GetValues(typeof(ShipName))) {
 			if (shipToPlace == ShipName.None)
 				continue;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
 /// <summary>
 /// This includes a number of utility methods for
 /// drawing and interacting with the Mouse.
@@ -42,6 +43,7 @@ static class UtilityFunctions
 	public const int ANIMATION_CELLS = 7;
 
 	public const int FRAMES_PER_CELL = 4;
+	
 	/// <summary>
 	/// Determines if the mouse is in a given rectangle.
 	/// </summary>
@@ -64,7 +66,6 @@ static class UtilityFunctions
 				result = true;
 			}
 		}
-
 		return result;
 	}
 
@@ -117,7 +118,6 @@ static class UtilityFunctions
 	int cellGap)
 	{
 		//SwinGame.FillRectangle(Color.Blue, left, top, width, height)
-
 		int rowTop = 0;
 		int colLeft = 0;
 
@@ -203,8 +203,8 @@ static class UtilityFunctions
 		}
 	}
 
-
 	private static string _message;
+	
 	/// <summary>
 	/// The message to display
 	/// </summary>
@@ -226,7 +226,6 @@ static class UtilityFunctions
 	/// <summary>
 	/// Draws the background for the current state of the game
 	/// </summary>
-
 	public static void DrawBackground()
 	{
 		switch (GameController.CurrentState) {
@@ -260,7 +259,6 @@ static class UtilityFunctions
 	{
 		AddAnimation(row, col, "Splash");
 	}
-
 
 	private static List<Sprite> _Animations = new List<Sprite>();
 	private static void AddAnimation(int row, int col, string image)

@@ -33,7 +33,6 @@ public class Ship
 			if (_shipName == ShipName.AircraftCarrier) {
 				return "Aircraft Carrier";
 			}
-
 			return _shipName.ToString();
 		}
 	}
@@ -78,7 +77,6 @@ public class Ship
 	{
 		_shipName = ship;
 		_tiles = new List<Tile>();
-
 		//gets the ship size from the enumarator
 		_sizeOfShip = (int) _shipName;
 	}

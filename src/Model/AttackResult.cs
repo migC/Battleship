@@ -91,7 +91,6 @@ public class AttackResult
 		if (_Ship == null) {
 			return Text;
 		}
-
 		return Text + " " + _Ship.Name;
 	}
 }

@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -29,7 +28,6 @@ static class DiscoveryController
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
             if (UtilityFunctions.IsMouseInRectangle(693, 72, 41, 41))
             {
-
                 GameController.AddNewState(GameState.ViewingGameMenu);
             }
             DoAttack();
@@ -83,5 +81,4 @@ static class DiscoveryController
 		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, HITS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_TOP);
 	}
-
 }
