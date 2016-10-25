@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -26,7 +25,6 @@ static class HighScoreController
 	private struct Score : IComparable
 	{
 		public string Name;
-
 		public int Value;
 		/// <summary>
 		/// Allows scores to be compared to facilitate sorting
@@ -45,8 +43,8 @@ static class HighScoreController
 		}
 	}
 
-
 	private static List<Score> _Scores = new List<Score>();
+	
 	/// <summary>
 	/// Loads the scores from the highscores text file.
 	/// </summary>
@@ -120,7 +118,8 @@ static class HighScoreController
 	{
 		const int SCORES_HEADING = 40;
 		const int SCORES_TOP = 80;
-		const int SCORE_GAP = 30;
+		//gap between score increased
+		const int SCORE_GAP = 40;
 
 		if (_Scores.Count == 0)
 			LoadScores();
@@ -199,7 +198,8 @@ static class HighScoreController
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
-			SaveScores(); /// to enable score saving
+			SaveScores(); 
+			/// to enable score saving
 			GameController.EndCurrentState();
 		}
 	}

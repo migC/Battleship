@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -12,7 +11,6 @@ using SwinGameSDK;
 /// from the menus in the game. These include the main menu, game
 /// menu and the settings m,enu.
 /// </summary>
-
 static class MenuController
 {
 
@@ -39,8 +37,8 @@ static class MenuController
 			"MEDIUM",
 			"HARD"
 		}
-
 	};
+	
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
@@ -70,6 +68,7 @@ static class MenuController
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
+	
 	/// <summary>
 	/// Handles the processing of user input when the main menu is showing
 	/// </summary>
@@ -131,7 +130,6 @@ static class MenuController
 				GameController.EndCurrentState();
 			}
 		}
-
 		return false;
 	}
 
@@ -142,7 +140,6 @@ static class MenuController
 	{
 		//Clears the Screen to Black
 		//SwinGame.DrawText("Main Menu", Color.White, GameFont("ArialLarge"), 50, 50)
-
 		DrawButtons(MAIN_MENU);
 	}
 
@@ -153,7 +150,6 @@ static class MenuController
 	{
 		//Clears the Screen to Black
 		//SwinGame.DrawText("Paused", Color.White, GameFont("ArialLarge"), 50, 50)
-
 		DrawButtons(GAME_MENU);
 	}
 
@@ -167,7 +163,6 @@ static class MenuController
 	{
 		//Clears the Screen to Black
 		//SwinGame.DrawText("Settings", Color.White, GameFont("ArialLarge"), 50, 50)
-
 		DrawButtons(MAIN_MENU);
 		DrawButtons(SETUP_MENU, 1, 1);
 	}
@@ -231,7 +226,6 @@ static class MenuController
 	{
 		int btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
 		int btnLeft = MENU_LEFT + BUTTON_SEP * (button + xOffset);
-
 		return UtilityFunctions.IsMouseInRectangle(btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 	}
 
@@ -310,6 +304,7 @@ static class MenuController
 				break;
 			case GAME_MENU_SURRENDER_BUTTON:
 				GameController.EndCurrentState();
+				Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
 				//end game menu
 				GameController.EndCurrentState();
 				//end game

@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -23,6 +22,7 @@ public static class GameController
 	private static Stack<GameState> _state = new Stack<GameState>();
 
 	private static AIOption _aiSetting;
+	
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used
@@ -55,7 +55,6 @@ public static class GameController
 	{
 		//bottom state will be quitting. If player exits main menu then the game is over
 		_state.Push(GameState.Quitting);
-
 		//at the start the player is viewing the main menu
 		_state.Push(GameState.ViewingMainMenu);
 	}
@@ -91,7 +90,6 @@ public static class GameController
 		}
 
 		_human = new Player(_theGame);
-
 		//AddHandler _human.PlayerGrid.Changed, AddressOf GridChanged
 		_ai.PlayerGrid.Changed += GridChanged;
 		_theGame.AttackCompleted += AttackCompleted;
@@ -102,7 +100,6 @@ public static class GameController
 	/// <summary>
 	/// Stops listening to the old game once a new game is started
 	/// </summary>
-
 	private static void EndGame()
 	{
 		//RemoveHandler _human.PlayerGrid.Changed, AddressOf GridChanged
@@ -167,7 +164,6 @@ public static class GameController
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
-
 				break;
 			case ResultOfAttack.GameOver:
 				PlayHitSequence(result.Row, result.Column, isHuman);
@@ -183,7 +179,6 @@ public static class GameController
 				} else {
 					Audio.PlaySoundEffect(GameResources.GameSound("Winner"));
 				}
-
 				break;
 			case ResultOfAttack.Hit:
 				PlayHitSequence(result.Row, result.Column, isHuman);
@@ -191,6 +186,7 @@ public static class GameController
 			case ResultOfAttack.Miss:
 				PlayMissSequence(result.Row, result.Column, isHuman);
 				break;
+			//shot already result
 			case ResultOfAttack.ShotAlready:
 				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 				break;
@@ -299,7 +295,6 @@ public static class GameController
 				HighScoreController.HandleHighScoreInput();
 				break;
 		}
-
 		UtilityFunctions.UpdateAnimations();
 	}
 
@@ -336,7 +331,6 @@ public static class GameController
 				HighScoreController.DrawHighScores();
 				break;
 		}
-
 		UtilityFunctions.DrawAnimations();
 
 		SwinGame.RefreshScreen();
@@ -379,5 +373,4 @@ public static class GameController
 	{
 		_aiSetting = setting;
 	}
-
 }

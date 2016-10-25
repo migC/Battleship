@@ -176,7 +176,6 @@ public class AIHardPlayer : AIPlayer
 			case ResultOfAttack.ShotAlready:
 				throw new ApplicationException("Error in AI");
 		}
-
 		if (_Targets.Count == 0)
 			_CurrentState = AIStates.Searching;
 	}
@@ -222,7 +221,6 @@ public class AIHardPlayer : AIPlayer
 					break; // TODO: might not be correct. Was : Exit For
 				}
 			}
-
 			RemoveShotsAround(current.ShotAt);
 		}
 	}
@@ -238,9 +236,7 @@ public class AIHardPlayer : AIPlayer
 	{
 		Stack<Target> newStack = new Stack<Target>();
 		//create a new stack
-
 		//check all targets in the _Targets stack
-
 		foreach (Target t in _Targets) {
 			//if the source of the target does not belong to the destroyed ship put them on the newStack
 			if (!object.ReferenceEquals(t.Source, toRemove))
@@ -249,12 +245,10 @@ public class AIHardPlayer : AIPlayer
 
 		_Targets.Clear();
 		//clear the _Targets stack
-
 		//for all the targets in the newStack, move them back onto the _Targets stack
 		foreach (Target t in newStack) {
 			_Targets.Push(t);
 		}
-
 		//if the _Targets stack is 0 then change the AI's state back to searching
 		if (_Targets.Count == 0)
 			_CurrentState = AIStates.Searching;
@@ -272,7 +266,6 @@ public class AIHardPlayer : AIPlayer
 	private void ProcessHit(int row, int col)
 	{
 		_LastHit.Add(_CurrentTarget);
-
 		//Uses _CurrentTarget as the source
 		AddTarget(row - 1, col);
 		AddTarget(row, col - 1);
@@ -345,12 +338,10 @@ public class AIHardPlayer : AIPlayer
 	/// <param name="column">the column of the targets location</param>
 	private void AddTarget(int row, int column)
 	{
-
 		if ((row >= 0 && column >= 0 && row < EnemyGrid.Height && column < EnemyGrid.Width && EnemyGrid[row, column] == TileView.Sea)) {
 			_Targets.Push(new Target(new Location(row, column), _CurrentTarget.ShotAt));
 		}
 	}
-
 }
 //=======================================================
 //Service provided by Telerik (www.telerik.com)

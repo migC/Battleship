@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -11,10 +10,8 @@ using SwinGameSDK;
 /// The EndingGameController is responsible for managing the interactions at the end
 /// of a game.
 /// </summary>
-
 static class EndingGameController
 {
-
     /// <summary>
     /// Draw the end of the game screen, shows the win/lose state
     /// </summary>
@@ -27,6 +24,10 @@ static class EndingGameController
         {
             SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
         }
+		/*if (GAME_MENU_SURRENDER_BUTTON)
+        {
+            SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
+        }*/
         else
         {
             SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
@@ -45,5 +46,4 @@ static class EndingGameController
             GameController.EndCurrentState();
         }
     }
-
 }

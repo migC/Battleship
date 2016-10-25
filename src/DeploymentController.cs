@@ -98,7 +98,6 @@ static class DeploymentController
 			}
             if (UtilityFunctions.IsMouseInRectangle(BACK_BUTTON_LEFT, 72, BACK_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT))
             {
-
                 //MeneController.DrawMainMenu();
                 GameController.AddNewState(GameState.ViewingGameMenu);
             }
@@ -170,10 +169,8 @@ static class DeploymentController
 					//Else
 					//    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
 				}
-
 				//SwinGame.DrawRectangle (Color.Black, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT);
 				SwinGame.DrawText(sn.ToString(), Color.White, GameResources.GameFont("Courier"), SHIPS_LEFT + TEXT_OFFSET, SHIPS_TOP + i * SHIPS_HEIGHT);
-
 			}
 		}
 
@@ -202,11 +199,9 @@ static class DeploymentController
 				return sn;
 			}
 		}
-
 		return ShipName.None;
 	}
 }
-
 //=======================================================
 //Service provided by Telerik (www.telerik.com)
 //Conversion powered by NRefactory.

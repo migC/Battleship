@@ -107,7 +107,6 @@ public abstract class AIPlayer : Player
 		AttackResult result = default(AttackResult);
 		int row = 0;
 		int column = 0;
-
 		//keep hitting until a miss
 		do {
 			Delay();
