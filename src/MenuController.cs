@@ -304,6 +304,7 @@ static class MenuController
 				break;
 			case GAME_MENU_SURRENDER_BUTTON:
 				GameController.EndCurrentState();
+				Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
 				//end game menu
 				GameController.EndCurrentState();
 				//end game
