@@ -188,6 +188,7 @@ public static class GameController
 				break;
 			//shot already result
 			case ResultOfAttack.ShotAlready:
+			   // PlaySequence(isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 				break;
 		}
@@ -253,6 +254,10 @@ public static class GameController
 				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
 					AIAttack();
 				break;
+				/*case ResultOfAttack.ShotAlready:
+				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
+					AIAttack();
+				break;*/
 			case ResultOfAttack.GameOver:
 				SwitchState(GameState.EndingGame);
 				break;

@@ -12,7 +12,6 @@ using SwinGameSDK;
 /// </summary>
 static class DeploymentController
 {
-	
 	private const int SHIPS_TOP = 98;
 	private const int SHIPS_LEFT = 20;
 	private const int SHIPS_HEIGHT = 90;
@@ -22,7 +21,6 @@ static class DeploymentController
 
 	private const int TOP_BUTTONS_HEIGHT = 46;
 	private const int PLAY_BUTTON_LEFT = 693;
-
 
     private const int BACK_BUTTON_LEFT = 20;
     private const int BACK_BUTTON_WIDTH = 102;
@@ -40,9 +38,7 @@ static class DeploymentController
 
 	private const int TEXT_OFFSET = 5;
 
-
 	private static Direction _currentDirection = Direction.UpDown;
-
 
 	private static ShipName _selectedShip = ShipName.Tug;
 

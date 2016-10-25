@@ -44,7 +44,6 @@ public static class GameResources
 		//Explosions
 		NewImage("Explosion", "explosion.png");
 		NewImage("Splash", "splash.png");
-
 	}
 
 	private static void LoadSounds()
@@ -285,7 +284,6 @@ public static class GameResources
 
 	private static void FreeMusic()
 	{
-
 		foreach (Music obj in _Music.Values) {
 			Audio.FreeMusic(obj);
 		}
