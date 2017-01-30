@@ -60,6 +60,7 @@ public static class GameResources
 
 	private static void LoadMusic()
 	{
+		//float volume = 0.5f;
 		NewMusic("Background", "horrordrone.mp3");
 	}
 

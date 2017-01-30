@@ -14,7 +14,7 @@ static class GameLogic
 
 		//Load Resources
 		GameResources.LoadResources();
-
+        //float volume = 0.5f;
 		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
 		//Game Loop

@@ -61,6 +61,7 @@ public class Tile
 				}
 			} else {
 				throw new InvalidOperationException("There is already a ship at [" + Row + ", " + Column + "]");
+				//a potential place to edit
 			}
 		}
 	}
